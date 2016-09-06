@@ -4,6 +4,6 @@
   				   Matt Irby
   			       Wesley Nguyen
   			       Zachary Gay
-    File Name: movie.css
-    Purpose: This is the stylesheet for tmnt.html
+    File Name: script.js
+    Purpose: This is the javascript file for index.html
 */
