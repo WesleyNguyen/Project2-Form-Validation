@@ -8,9 +8,56 @@
  *  Purpose: This is the stylesheet for index.html
 */
 
+/* Center form on the page. */
+body {
+	text-align: center;
+}
+
+/* Removes styling that centers content within the form from above body styling. */
+body > * {
+	text-align: left;
+}
+
+/* Styles the title of the form */
+h4{
+	text-align: center;
+	margin-bottom: 0.3em;
+}
+
+/* Styling form to fit center of page. */
+form{
+	display: inline-block;
+}
+
+/* Styling the fieldset to match image on P2 doc. */
+fieldset{
+	background-color: #d3d3d3;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 /* Styling the submit button. */
-input[type="submit"], input[type="reset"]{
-	font-family: Verdana, Tahoma, sans-serrif;
+input[type="submit"]{
+	display: block;
+	text-align: center;
+	margin: auto;
+	width: 360px;
+	/*font-family: Verdana, Tahoma, sans-serrif;
 	border: 2px solid #A1A1A1;
-	border-radius: 10px;
+	border-radius: 10px; */
+}
+
+/* Styling the labels. */
+label{
+	float: left;
+	margin-right: 1em;
+	text-align: left;
+	width: 5em;
+}
+
+/* Style user input fields but not submit button. */
+.userInput{
+	float: left;
+	margin-bottom: 0.3em;
+	margin-right: 0.1em;
 }
