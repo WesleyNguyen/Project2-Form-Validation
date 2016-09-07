@@ -21,13 +21,47 @@
 </head>
 
 <body>
-	<form>
-		Phone Number: 
-		<input type="text" name="phoneNum" placeholder="(XXX)XXX-XXXX" />
-		<input type="submit" />
-		<input type="reset" value="Clear" />
-	</form>
-
+		<!--Creates form-->
+		<form>
+			<!--Form has more than one field to fill-->
+			<fieldset>
+			
+				<h4>Please tell us who you are (Georgia residents only)</h4>
+				
+				<!--Label and Field for First Name-->
+				<label for="firstName">First Name:</label>
+				<input class="userInput" type="text" name="firstName" />
+				
+				<!--Label and Field for Last Name-->
+				<label for="lastName">Last Name:</label>
+				<input class="userInput" type="text" name="lastName" />
+				
+				<br />
+				
+				<!--Label and Field for Telephone-->
+				<label for="phoneNum">Telephone:</label>
+				<input class="userInput" type="text" name="phoneNum" placeholder="(XXX)XXX-XXXX" />
+				
+				<br />
+				<br />
+				
+				<!--Label and Field for City-->
+				<label for="city">City:</label>
+				<input class="userInput" type="text" name="city" />
+				
+				<!--Label and Dropdown Box for Zip Code-->
+				<!--NOTE: DROPDOWN OPTIONS WILL BE FILLED USING JQUERY-->
+				<label for="zip">Zip Code:</label>
+				<select class="userInput" name="zip">
+					<option>12345</option>
+				</select>
+				
+				<br />
+				
+				<!--Submit button-->
+				<input type="submit" value="Share personal info with our unscrupulous staff" />
+			</fieldset>
+		</form>
 	<script type="text/javascript" src="../Scripts/script.js"></script>
 </body>
 
