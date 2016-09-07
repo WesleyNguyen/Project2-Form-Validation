@@ -7,3 +7,10 @@
  *  File Name: StyleSheet.css
  *  Purpose: This is the stylesheet for index.html
 */
+
+/* Styling the submit button. */
+input[type="submit"], input[type="reset"]{
+	font-family: Verdana, Tahoma, sans-serrif;
+	border: 2px solid #A1A1A1;
+	border-radius: 10px;
+}
