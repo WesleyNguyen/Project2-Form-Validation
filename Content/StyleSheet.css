@@ -10,6 +10,7 @@
 
 /* Center form on the page. */
 body {
+	padding-top: 50px;
 	text-align: center;
 }
 
