@@ -10,5 +10,5 @@
 
 // function used to check if phone number input is valid
 function numCheck(){
-	
+	var input = document.getElementById("phoneNum").value;
 }
