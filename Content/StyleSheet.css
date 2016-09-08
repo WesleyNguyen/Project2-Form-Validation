@@ -35,6 +35,8 @@ fieldset{
 	background-color: #d3d3d3;
 	margin-left: auto;
 	margin-right: auto;
+	padding-top: 75px;
+	padding-bottom: 95px;
 }
 
 /* Styling the submit button. */
