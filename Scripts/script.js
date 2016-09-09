@@ -7,3 +7,8 @@
     File Name: script.js
     Purpose: This is the javascript file for index.html
 */
+
+// function used to check if phone number input is valid
+function numCheck(){
+	var input = document.getElementById("phoneNum").value;
+}
