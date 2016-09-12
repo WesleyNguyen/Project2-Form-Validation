@@ -1,18 +1,24 @@
 /*
   	Group Name: The Average Joes
   	Group Members: Bruce Li (Leader)
-  				   Matthew H. Irby
+  				   Matt Irby
   			       Wesley Nguyen
   			       Zachary Gay
     File Name: script.js
-	Project: Project 2
-    Purpose: This file will act as the JavaScript file for index.html, providing functionality to the page
+    Purpose: This is the javascript file for index.html
 */
 
-function submission(){
-	var fs = require("fs");
-var text = fs.readFileSync("../content/ga_zip_codes.txt");
-var textByLine = text.split("\n");
-textByLine.toString();
-document.getElementById("demo").innerHTML = textByLine;
+// function used to check if phone number input is valid
+function numCheck(){
+	var input = document.getElementById("phoneNum").value;
+}
+
+function capitalizeFirstName(){
+    var x = document.getElementById("firstName");
+    x.value = x.value[0].toUpperCase() + x.value.slice(1);
+}
+
+function capitalizeLastName(){
+    var x = document.getElementById("lastName");
+    x.value = x.value[0].toUpperCase() + x.value.slice(1);
 }
