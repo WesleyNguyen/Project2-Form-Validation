@@ -1,26 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<!--
-	Group Name: The Average Joes
-	Group Members: Bruce Li (leader)
-				   Matt Irby
-				   Wesley Nguyen
-				   Zachary Gay
-	File Name: index.html
-	Purpose: This is the markup for the form validation page.
+    <head>
+        <!--
+Group Name: The Average Joes
+Group Members: Bruce Li (leader)
+Matt Irby
+Wesley Nguyen
+Zachary Gay
+File Name: index.html
+Purpose: This is the markup for the form validation page.
 -->
+        <meta charset="UTF-8">
+        <!-- Links Stylesheet.css to this file. -->
+        <link rel="stylesheet" type="text/css" href="../Content/Stylesheet.css" />
 
-<meta charset="UTF-8">
-
-<!-- Links Stylesheet.css to this file. -->
-<link rel="stylesheet" type="text/css" href="../Content/Stylesheet.css" />
-
-<!-- Title of Web Page to be placed in the tab -->
-<title>Form Validation</title>
-</head>
-
-<body>
+        <!-- Title of Web Page to be placed in the tab -->
+        <title>Form Validation</title>
+    </head>
+    <body>
 		<!--Creates form-->
 		<form>
 			<!--Form has more than one field to fill-->
@@ -30,11 +27,11 @@
 				
 				<!--Label and Field for First Name-->
 				<label for="firstName">First Name:</label>
-				<input class="userInput" type="text" id="firstName" />
+				<input class="userInput" type="text" id="firstName" onblur="capitalizeFirstName()"/>
 				
 				<!--Label and Field for Last Name-->
 				<label for="lastName">Last Name:</label>
-				<input class="userInput" type="text" id="lastName" />
+				<input class="userInput" type="text" id="lastName" onblur="capitalizeLastName()"/>
 				
 				<br />
 				
@@ -65,4 +62,8 @@
 	<script type="text/javascript" src="../Scripts/script.js"></script>
 </body>
 
+
+          
+
+   
 </html>
