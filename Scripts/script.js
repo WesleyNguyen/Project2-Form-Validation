@@ -12,3 +12,13 @@
 function numCheck(){
 	var input = document.getElementById("phoneNum").value;
 }
+
+function capitalizeFirstName(){
+    var x = document.getElementById("firstName");
+    x.value = x.value[0].toUpperCase() + x.value.slice(1);
+}
+
+function capitalizeLastName(){
+    var x = document.getElementById("lastName");
+    x.value = x.value[0].toUpperCase() + x.value.slice(1);
+}
