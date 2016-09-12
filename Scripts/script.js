@@ -14,6 +14,16 @@ function numCheck(){
 }
 
 function capitalizeFirstName(){
+<<<<<<< HEAD
     var name = document.getElementById("firstname");
     name.value = name.value[0].toUpperCase() + name.value.slice(1);
+=======
+    var x = document.getElementById("firstName");
+    x.value = x.value[0].toUpperCase() + x.value.slice(1);
+}
+
+function capitalizeLastName(){
+    var x = document.getElementById("lastName");
+    x.value = x.value[0].toUpperCase() + x.value.slice(1);
+>>>>>>> master
 }
