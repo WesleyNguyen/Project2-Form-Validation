@@ -1,68 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<!--
-	Group Name: The Average Joes
-	Group Members: Bruce Li (leader)
-				   Matt Irby
-				   Wesley Nguyen
-				   Zachary Gay
-	File Name: index.html
-	Purpose: This is the markup for the form validation page.
+    <head>
+        <!--
+Group Name: The Average Joes
+Group Members: Bruce Li (leader)
+Matt Irby
+Wesley Nguyen
+Zachary Gay
+File Name: index.html
+Purpose: This is the markup for the form validation page.
 -->
+        <meta charset="UTF-8">
+        <!-- Links Stylesheet.css to this file. -->
+        <link rel="stylesheet" type="text/css" href="../Content/Stylesheet.css" />
 
-<meta charset="UTF-8">
+        <!-- Title of Web Page to be placed in the tab -->
+        <title>Form Validation</title>
+    </head>
+    <body>
 
-<!-- Links Stylesheet.css to this file. -->
-<link rel="stylesheet" type="text/css" href="../Content/Stylesheet.css" />
+        <fieldset>
+            <h4>Please tell us who you are (Georgia residents only)</h4>
 
-<!-- Title of Web Page to be placed in the tab -->
-<title>Form Validation</title>
-</head>
+            <!--Label and Field for First Name-->
+            <label for="firstName">First Name:</label>
+            <input class="userInput" type="text" id="firstName" onblur="myFunction()"/>
 
-<body>
-		<!--Creates form-->
-		<form>
-			<!--Form has more than one field to fill-->
-			<fieldset>
-			
-				<h4>Please tell us who you are (Georgia residents only)</h4>
-				
-				<!--Label and Field for First Name-->
-				<label for="firstName">First Name:</label>
-				<input class="userInput" type="text" id="firstName" />
-				
-				<!--Label and Field for Last Name-->
-				<label for="lastName">Last Name:</label>
-				<input class="userInput" type="text" id="lastName" />
-				
-				<br />
-				
-				<!--Label and Field for Telephone-->
-				<label for="phoneNum">Telephone:</label>
-				<input class="userInput" type="text" id="phoneNum" placeholder="(XXX)XXX-XXXX" onblur="numCheck()" />
-				
-				<br />
-				<br />
-				
-				<!--Label and Field for City-->
-				<label for="city">City:</label>
-				<input class="userInput" type="text" id="city" />
-				
-				<!--Label and Dropdown Box for Zip Code-->
-				<!--NOTE: DROPDOWN OPTIONS WILL BE FILLED USING JQUERY/JS-->
-				<label for="zip">Zip Code:</label>
-				<select class="userInput" id="zip">
-					<option>12345</option>
-				</select>
-				
-				<br />
-				
-				<!--Submit button-->
-				<input type="submit" value="Share personal info with our unscrupulous staff" />
-			</fieldset>
-		</form>
-	<script type="text/javascript" src="../Scripts/script.js"></script>
-</body>
 
+            <!--Label and Field for Last Name-->
+            <label for="lastName">Last Name:</label>
+            <input class="userInput" type="text" id="lastName" onblur="myFunction()"/>
+
+            <!--Label and Field for Telephone-->
+            <label for="phoneNum">Telephone:</label>
+            <input class="userInput" type="text" id="phoneNum" placeholder="(XXX)XXX-XXXX" onblur="numCheck()" />
+
+        </fieldset>
+
+        <script>
+            function myFunction() {
+                var x = document.getElementById("lastName");
+                x.value = x.value[0].toUpperCase() + x.value.slice(1);
+            }
+        </script>
+
+    </body>
 </html>
