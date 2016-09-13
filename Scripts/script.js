@@ -1619,6 +1619,15 @@ var zipcodes = [[30323, 30335, 30351, 30363, 30365, 30367, 30381, 30466, 30505, 
 
 function numCheck(){
 	var input = document.getElementById("phoneNum").value;
+	var pattern1 = /(\(|^)[0-9]{3}(\/|\.|\)|-|^)[0-9]{3}(\.|\-|^)[0-9]{4}|[0-9]{10}/;
+	var result1 = pattern1.test(input);
+	
+	if (result1){
+		alert("Success!");
+	}
+	else{
+		alert("Failure!");
+	}
 }
 
 function capitalizeFirstName(){
