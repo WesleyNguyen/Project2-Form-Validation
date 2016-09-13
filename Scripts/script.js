@@ -1278,11 +1278,8 @@ function numCheck(){
 	var pattern1 = /(\(|^)[0-9]{3}(\/|\.|\)|-|^)[0-9]{3}(\.|\-|^)[0-9]{4}|[0-9]{10}/;
 	var result1 = pattern1.test(input);
 	
-	if (result1){
-		alert("Success!");
-	}
-	else{
-		alert("Failure!");
+	if (!result1){
+		alert("Please enter a valid phone number");
 	}
 }
 
