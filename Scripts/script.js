@@ -11,6 +11,15 @@
 // function used to check if phone number input is valid
 function numCheck(){
 	var input = document.getElementById("phoneNum").value;
+	var pattern1 = /(\(|^)[0-9]{3}(\/|\.|\)|-|^)[0-9]{3}(\.|\-|^)[0-9]{4}|[0-9]{10}/;
+	var result1 = pattern1.test(input);
+	
+	if (result1){
+		alert("Success!");
+	}
+	else{
+		alert("Failure!");
+	}
 }
 
 function capitalizeFirstName(){
