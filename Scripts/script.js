@@ -1275,11 +1275,20 @@ var zipcodes = [[30323, 30335, 30351, 30363, 30365, 30367, 30381, 30466, 30505, 
 
 function numCheck(){
 	var input = document.getElementById("phoneNum").value;
-	var pattern1 = /(\(|^)[0-9]{3}(\/|\.|\)|-|^)[0-9]{3}(\.|\-|^)[0-9]{4}|[0-9]{10}/;
-	var result1 = pattern1.test(input);
 	
-	if (!result1){
-		alert("Please enter a valid phone number");
+	// This pattern will allow for parentheses. Only one more case left to be fixed with this pattern.
+	// Leaving this here until TA responds about which formats are valid. DO NOT DELETE.
+	//var pattern = /(\((?=[0-9]{3}\))|^)[0-9]{3}(\.(?=[0-9]{3}\.)|\)|-(?=[0-9]{3}-)|^)[0-9]{3}(\.|\-|^)[0-9]{4}$/;
+	
+	// This pattern will only accept two formats: 111.222.3333 OR 111-222-3333
+	// Rejects all other patterns. Using this to follow the rubric. Waiting for TA response to decide which pattern to use.
+	var pattern=/[0-9]{3}(\.(?=[0-9]{3}\.)|-(?=[0-9]{3}-)|^)[0-9]{3}(\.|\-|^)[0-9]{4}$/;
+	var result = pattern.test(input);
+
+	if (!result){
+		alert("Incorrect format. Valid phone number formats are:\n"
+		+ "111.222.3333\n" 
+		+ "111-222-3333");
 	}
 }
 
