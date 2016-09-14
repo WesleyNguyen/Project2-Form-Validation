@@ -1292,31 +1292,26 @@ function numCheck() {
 
 function capitalizeFirstName() {
     var x = document.getElementById("firstName");
-    var tempFullName;
-    var tempSlice;
-    var i = 0;
-
-    while (i < x.value.length){
-        tempSlice = x.value.slice(i);
-        x.value = x.value[i].toUpperCase();
-        tempFullName = x.value + tempSlice;
-        x.value = tempFullName;
-        i++;
-    }
-
-    //x.value[5] = x.value[5].toUpperCase() + x.value.slice(6);
+	console.log(x.value.length);
+	x.value = capitalize(x.value);
 }
 
 function capitalizeLastName() {
     var x = document.getElementById("lastName");
-    x.value = x.value[0].toUpperCase() + x.value.slice(1);
+    x.value = capitalize(x.value);
 }
 
 function autofillCities() {
 
     var x = document.getElementById("city");
     var possibleCities = [];
+<<<<<<< HEAD
 
+=======
+	
+	x.value = capitalize(x.value);
+    
+>>>>>>> master
     for (var i = 0; i < cities.length; i++) {
         if (cities[i].startsWith(x.value)) {
             possibleCities.push(cities[i]);
@@ -1362,6 +1357,12 @@ function submissionCheck(){
     else{
         alert("Failure! Retry!");
     }
+	if (emptyFormCheck()){
+		alert("Successful submission! All input is valid!");
+	}
+	else{
+		alert("Error!  A field is empty");
+	}
 }
 
 // checks for empty input
@@ -1395,5 +1396,27 @@ function emptyFormCheck(){
 
     // returns true if all fields are filled
     return true;
+	// checks each field to make sure nothing is empty
+	if (document.getElementById("firstName").value == "" || document.getElementById("lastName").value == "" || document.getElementById("phoneNum").value == "" || document.getElementById("city").value == "" || document.getElementById("zip").value == "Select zip code:"){
+		return false;
+	}
+	
+	// returns true if all fields are filled
+	return true;
 }
 
+
+/*
+	Properly capitalizes names and cities, where it capitalizes after spaces and hyphens
+*/
+function capitalize(str){
+	for(var i = 0; i<str.length; i++){
+		if(i==0){
+			str = str[i].toUpperCase() + str.slice(i+1);
+		}
+		else if(str[i] == " " || str[i] == "-"){
+			str = str.slice(0, i+1) + str[i+1].toUpperCase() + str.slice(i+2);
+		}
+	}
+	return str;
+}
