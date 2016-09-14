@@ -8,8 +8,6 @@
     Purpose: This is the javascript file for index.html
 */
 
-// function used to check if phone number input is valid
-
 var cities = ["-",
 "Abbeville",
 "Acworth",
@@ -1273,8 +1271,8 @@ var zipcodes = [[30323, 30335, 30351, 30363, 30365, 30367, 30381, 30466, 30505, 
 [30582],
 [30295]];
 
+// function will check and alert the user for invalid phone number input upon leaving text field
 function numCheck(){
-	
 	// grabs the current user input from the text field
 	var input = document.getElementById("phoneNum").value;
 	
@@ -1345,5 +1343,48 @@ function autofillZipCodes() {
         select.removeChild(select[i]);
     }
 
+}
+
+// will check to make sure the form is entirely filled out before submission
+function submissionCheck(){
+	if (emptyFormCheck()){
+		alert("Successful submission! All input is valid!");
+	}
+	else{
+		alert("Failure! Retry!");
+	}
+}
+
+// checks for empty input
+// returns true if all fields are filled in
+// other methods will handle correcting the input
+function emptyFormCheck(){
+	// checks each field to make sure nothing is empty
+	if (document.getElementById("firstName").value == ""){
+		return false;
+	}
+	else{
+		if (document.getElementById("lastName").value == ""){
+			return false;
+		}
+		else{
+			if (document.getElementById("phoneNum").value == ""){
+				return false;
+			}
+			else{
+				if (document.getElementById("city").value == ""){
+					return false;
+				}
+				else{
+					if (document.getElementById("zip").value == "Select zip code:"){
+						return false;
+					}
+				}
+			}
+		}
+	}
+	
+	// returns true if all fields are filled
+	return true;
 }
 
