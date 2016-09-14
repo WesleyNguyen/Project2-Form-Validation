@@ -37,17 +37,16 @@ Purpose: This is the markup for the form validation page.
 				
 				<!--Label and Field for Telephone-->
 				<label for="phoneNum">Telephone:</label>
-				<input class="userInput" type="text" id="phoneNum" placeholder="(XXX)XXX-XXXX" onblur="numCheck()" />
+				<input class="userInput" type="text" id="phoneNum" onblur="numCheck()" />
 				
 				<br />
 				<br />
 				
 				<!--Label and Field for City-->
 				<label for="city">City:</label>
-				<input class="userInput" type="text" id="city" placeholder="-" onblur="autofillZipCodes()"/>
+				<input class="userInput" type="text" id="city" onblur="autofillZipCodes()" onkeyup="autofillCities()"/>
 				
 				<!--Label and Dropdown Box for Zip Code-->
-				<!--NOTE: DROPDOWN OPTIONS WILL BE FILLED USING JQUERY/JS-->
 				<label for="zip">Zip Code:</label>
 				<select class="userInput" id="zip">
 					<option>Select zip code:</option>
@@ -56,14 +55,9 @@ Purpose: This is the markup for the form validation page.
 				<br />
 				
 				<!--Submit button-->
-				<input type="submit" value="Share personal info with our unscrupulous staff" />
+				<input type="submit" value="Share personal info with our unscrupulous marketing staff" onclick="submissionCheck()"/>
 			</fieldset>
 		</form>
 	<script type="text/javascript" src="../Scripts/script.js"></script>
-</body>
-
-
-          
-
-   
+</body> 
 </html>
