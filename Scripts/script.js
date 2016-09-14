@@ -1320,3 +1320,20 @@ function autofillZipCodes() {
 
 }
 
+function autoCity(){
+	var cityName = cities.indexOf(document.getElementById("city").value);
+	int occur = 0;
+	int index = 0;
+	
+	for(int i=1; i<cities; i++){
+		if(cities[i].toUpperCase().indexOf(cityName.toUpperCase()) !== -1){
+			occur++;
+			index = i;
+		}
+	}
+	
+	if(occur == 1){
+		document.getElementById("city").value = cities[i];
+	}
+}
+
