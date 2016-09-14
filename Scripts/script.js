@@ -1302,17 +1302,31 @@ function capitalizeLastName(){
     x.value = x.value[0].toUpperCase() + x.value.slice(1);
 }
 
+
+
 function autofillZipCodes() {
     
-    var select = document.getElementById("zip");
-    var options = zipcodes[0];
+    var index = cities.indexOf(document.getElementById("city").value);
     
-    for(var i = 0; i < options.length; i++) {
+    var select = document.getElementById("zip");
+    var options = zipcodes[index];
+    
+    var i = 0;
+    while (i < options.length) {
         var opt = options[i];
         var el = document.createElement("option");
         el.textContent = opt;
         el.value = opt;
-        select.appendChild(el);
+        select[i] = el;
+        i++;
     }
+    
+    while (i < select.length) {
+        select.removeChild(select[i]);
+    }
+   
+    
+   
+
 }
 
