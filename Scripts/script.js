@@ -1303,12 +1303,29 @@ function capitalizeLastName(){
     x.value = x.value[0].toUpperCase() + x.value.slice(1);
 }
 
+function autofillCities() {
+    
+    var x = document.getElementById("city");
+    var possibleCities = [];
+    
+    for (var i = 0; i < cities.length; i++) {
+        if (cities[i].startsWith(x.value)) {
+            possibleCities.push(cities[i]);
+        }
+    }
+    
+    if (possibleCities.length == 1) {
+        x.value = possibleCities[0];
+    }
+    
+    x.value = x.value;    
+    
+}
 
 
 function autofillZipCodes() {
     
     var index = cities.indexOf(document.getElementById("city").value);
-    
     var select = document.getElementById("zip");
     var options = zipcodes[index];
     
@@ -1325,9 +1342,6 @@ function autofillZipCodes() {
     while (i < select.length) {
         select.removeChild(select[i]);
     }
-   
-    
-   
 
 }
 
