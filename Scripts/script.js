@@ -1,4 +1,3 @@
-/*jslint browser: true, devel: true */
 
 //  Group Name: The Average Joes
 //  Group Members: Bruce Li (Leader), Matt Irby, Wesley Nguyen, Zachary Gay
