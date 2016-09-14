@@ -1274,21 +1274,24 @@ var zipcodes = [[30323, 30335, 30351, 30363, 30365, 30367, 30381, 30466, 30505, 
 [30295]];
 
 function numCheck(){
+	
+	// grabs the current user input from the text field
 	var input = document.getElementById("phoneNum").value;
 	
-	// This pattern will allow for parentheses. Only one more case left to be fixed with this pattern.
-	// Leaving this here until TA responds about which formats are valid. DO NOT DELETE.
-	//var pattern = /(\((?=[0-9]{3}\))|^)[0-9]{3}(\.(?=[0-9]{3}\.)|\)|-(?=[0-9]{3}-)|^)[0-9]{3}(\.|\-|^)[0-9]{4}$/;
-	
 	// This pattern will only accept two formats: 111.222.3333 OR 111-222-3333
-	// Rejects all other patterns. Using this to follow the rubric. Waiting for TA response to decide which pattern to use.
+	// Rejects all other patterns. Using this to follow the rubric.
 	var pattern=/[0-9]{3}(\.(?=[0-9]{3}\.)|-(?=[0-9]{3}-))[0-9]{3}(\.|-)[0-9]{4}$/;
+	
+	// checks to see if the input matches the required pattern
+	// returns true if input matches valid input, false otherwise
 	var result = pattern.test(input);
 
+	// if user input is invalid, inform the user and reset the field to be empty
 	if (!result){
 		alert("Incorrect format. Valid phone number formats are:\n"
 		+ "111.222.3333\n" 
 		+ "111-222-3333");
+		document.getElementById("phoneNum").value = "";
 	}
 }
 
