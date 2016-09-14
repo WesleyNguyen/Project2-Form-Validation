@@ -1302,6 +1302,8 @@ function capitalizeLastName(){
     x.value = x.value[0].toUpperCase() + x.value.slice(1);
 }
 
+
+
 function autofillZipCodes() {
     
     var index = cities.indexOf(document.getElementById("city").value);
@@ -1309,17 +1311,21 @@ function autofillZipCodes() {
     var select = document.getElementById("zip");
     var options = zipcodes[index];
     
-    for(var i = 0; i < select.length; i++) {
-        select.removeChild(select[i]);
-    }
-   
-    for(var i = 0; i < options.length; i++) {
+    var i = 0;
+    while (i < options.length) {
         var opt = options[i];
         var el = document.createElement("option");
         el.textContent = opt;
         el.value = opt;
-        select.appendChild(el);
+        select[i] = el;
+        i++;
     }
+    
+    while (i < select.length) {
+        select.removeChild(select[i]);
+    }
+   
+    
    
 
 }
