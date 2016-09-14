@@ -1298,8 +1298,10 @@ function capitalizeLastName(){
 
 function autofillZipCodes() {
     
+    var index = cities.indexOf(document.getElementById("city").value);
+    
     var select = document.getElementById("zip");
-    var options = zipcodes[0];
+    var options = zipcodes[index];
     
     for(var i = 0; i < options.length; i++) {
         var opt = options[i];
@@ -1308,5 +1310,7 @@ function autofillZipCodes() {
         el.value = opt;
         select.appendChild(el);
     }
+    
+
 }
 
