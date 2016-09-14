@@ -1303,6 +1303,10 @@ function autofillZipCodes() {
     var select = document.getElementById("zip");
     var options = zipcodes[index];
     
+    for(var i = 0; i < select.length; i++) {
+        select.removeChild(select[i]);
+    }
+   
     for(var i = 0; i < options.length; i++) {
         var opt = options[i];
         var el = document.createElement("option");
@@ -1310,7 +1314,7 @@ function autofillZipCodes() {
         el.value = opt;
         select.appendChild(el);
     }
-    
+   
 
 }
 
