@@ -1275,7 +1275,7 @@ function numCheck() {
 	
 	// This pattern will only accept two formats: 111.222.3333 OR 111-222-3333
 	// Rejects all other patterns. Using this to follow the rubric.
-	var pattern = /[0-9]{3}(\.(?=[0-9]{3}\.)|-(?=[0-9]{3}-))[0-9]{3}(\.|-)[0-9]{4}$/;
+	var pattern = /(^)[0-9]{3}(\.(?=[0-9]{3}\.)|-(?=[0-9]{3}-))[0-9]{3}(\.|-)[0-9]{4}$/;
 	
 	// checks to see if the input matches the required pattern
 	// returns true if input matches valid input, false otherwise
