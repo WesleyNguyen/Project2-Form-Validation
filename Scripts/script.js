@@ -4,7 +4,7 @@
 //  File Name: script.js
 //  Purpose: This is the javascript file for index.html
 
-
+// declaration of cities/zip codes arrays
 var cities = ["-",
     "Abbeville",
     "Acworth",
@@ -1290,16 +1290,19 @@ function numCheck() {
 	}
 }
 
+// capitalizes first name properly
 function capitalizeFirstName() {
     var x = document.getElementById("firstName");
 	x.value = capitalize(x.value); //Sets the value of firstName field to the properly capitalized version
 }
 
+// capitalizes last name properly
 function capitalizeLastName() {
     var x = document.getElementById("lastName");
-    x.value = capitalize(x.value);
+    x.value = capitalize(x.value); //Sets the value of lastName field to the properly capitalized version
 }
 
+// autofills the city field upon user input
 function autofillCities() {
     
     var x = document.getElementById("city");
@@ -1319,6 +1322,7 @@ function autofillCities() {
     
 }
 
+// autofills the zip code dropdown menu upon user input of city
 function autofillZipCodes() {
     
     var index = cities.indexOf(document.getElementById("city").value);		//pulls value of index city occurs in city array
@@ -1380,6 +1384,7 @@ function capitalize(str){
 	return str;
 }
 
+// checks to see that user inputted city exists
 function validateCity() {
     
     var x = document.getElementById("city");
