@@ -1292,8 +1292,7 @@ function numCheck() {
 
 function capitalizeFirstName() {
     var x = document.getElementById("firstName");
-	console.log(x.value.length);
-	x.value = capitalize(x.value);
+	x.value = capitalize(x.value); //Sets the value of firstName field to the properly capitalized version
 }
 
 function capitalizeLastName() {
@@ -1304,30 +1303,27 @@ function capitalizeLastName() {
 function autofillCities() {
     
     var x = document.getElementById("city");
-    var possibleCities = [];
+    var possibleCities = [];  //initialize an empty array of possible cities
 	
 	x.value = capitalize(x.value);
     
     for (var i = 0; i < cities.length; i++) {
-        if (cities[i].startsWith(x.value)) {
+        if (cities[i].startsWith(x.value)) {		//if an index has properly matched prefix, add to array
             possibleCities.push(cities[i]);
         }
     }
     
-    if (possibleCities.length == 1) {
+    if (possibleCities.length == 1) {				// if only one value matches prefix, fill into x.value field
         x.value = possibleCities[0];
     }
     
-    x.value = x.value;    
-    
 }
-
 
 function autofillZipCodes() {
     
-    var index = cities.indexOf(document.getElementById("city").value);
+    var index = cities.indexOf(document.getElementById("city").value);		//pulls value of index city occurs in city array
     var select = document.getElementById("zip");
-    var options = zipcodes[index];
+    var options = zipcodes[index];											//list of possible zipcodes
     
     var i = 0;
     while (i < options.length) {
@@ -1340,7 +1336,7 @@ function autofillZipCodes() {
     }
     
     while (i < select.length) {
-        select.removeChild(select[i]);
+        select.removeChild(select[i]);			//remove previous options from array
     }
 
 }
@@ -1382,4 +1378,24 @@ function capitalize(str){
 		}
 	}
 	return str;
+}
+
+function validateCity() {
+    
+    var x = document.getElementById("city");
+    var possibleCities = [];  //initialize an empty array of possible cities
+	
+	x.value = capitalize(x.value);
+    
+    for (var i = 0; i < cities.length; i++) {
+        if (cities[i].startsWith(x.value)) {		//if an index has properly matched prefix, add to array
+            possibleCities.push(cities[i]);
+        }
+    }
+    
+    if (possibleCities.length == 0) {               //if no possible cities, invalid name
+        x.value = "";
+        alert("Error! City does not exist.");
+    }
+    
 }
