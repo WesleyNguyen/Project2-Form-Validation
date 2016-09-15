@@ -44,7 +44,7 @@ Purpose: This is the markup for the form validation page.
 				
 				<!--Label and Field for City-->
 				<label for="city">City:</label>
-				<input class="userInput" type="text" id="city" onblur="autofillZipCodes()" onkeyup="autofillCities()"/>
+				<input class="userInput" type="text" id="city" onblur="validateCity();autofillZipCodes()" onblur="validateCity()" onkeyup="autofillCities()"/>
 				
 				<!--Label and Dropdown Box for Zip Code-->
 				<label for="zip">Zip Code:</label>
