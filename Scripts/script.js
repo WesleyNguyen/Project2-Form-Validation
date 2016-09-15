@@ -1317,10 +1317,7 @@ function autofillCities() {
         x.value = possibleCities[0];
     }
     
-    x.value = x.value;    
-    
 }
-
 
 function autofillZipCodes() {
     
@@ -1381,4 +1378,24 @@ function capitalize(str){
 		}
 	}
 	return str;
+}
+
+function validateCity() {
+    
+    var x = document.getElementById("city");
+    var possibleCities = [];  //initialize an empty array of possible cities
+	
+	x.value = capitalize(x.value);
+    
+    for (var i = 0; i < cities.length; i++) {
+        if (cities[i].startsWith(x.value)) {		//if an index has properly matched prefix, add to array
+            possibleCities.push(cities[i]);
+        }
+    }
+    
+    if (possibleCities.length == 0) {               //if no possible cities, invalid name
+        x.value = "";
+        alert("Error! City does not exist.");
+    }
+    
 }
