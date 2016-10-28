@@ -1305,13 +1305,9 @@ function autofillCities() {
 
     var x = document.getElementById("city");
     var possibleCities = [];
-<<<<<<< HEAD
-
-=======
 	
 	x.value = capitalize(x.value);
     
->>>>>>> master
     for (var i = 0; i < cities.length; i++) {
         if (cities[i].startsWith(x.value)) {
             possibleCities.push(cities[i]);
